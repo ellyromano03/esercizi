@@ -1,29 +1,36 @@
-"use strict"
+"use strict";
 
-const stipendi = [500, 1000, 2370, 1140, 1500, 1750, 5000, 1220, 1600]
+const stipendi = [500, 1000, 2370, 1140, 1500, 1750, 5000, 1220, 1600];
 
 let mediumValue = (n) => {
-    let media 
-    let somma = 0
+    let media; 
+    let somma = 0;
     for (let i = 0; i < n.lenght; i++){
-        somma += n[i]
-    }
-    return media = somma/n.lenght
-}
+        somma += n[i];
+    };
+    return media = somma/n.lenght;
+};
 
 //es 1
-const a = stipendi.map(num => num + ((num*10)/100))
-console.log(a)
+const a = stipendi.map(num => num + ((num*10)/100));
+console.log(a);
 
 //es 2
 const b = stipendi.forEach(num => {
     if (num>1000){
-        console.log(num)
-    }
-})
+        console.log(num);
+    };
+});
 
 //es 3
-const c = stipendi.filter(num => num > mediumValue(a))
-console.log(c)
+const c = stipendi.filter(num => num > mediumValue(a));
+console.log(c);
 
 //es 4
+let d = () => {
+  return a.reduce(function(somma, num) {
+    return ( x % 100 == 0) ? somma + num: somma;
+  });
+};
+console.log(d());
+    
